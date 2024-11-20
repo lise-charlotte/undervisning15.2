@@ -1,7 +1,7 @@
 const input = document.querySelector('#input');
 const parent = document.querySelector('#main');
 
-function createNewNode = (htmlTag, tekst, parent) {
+function createNewNode(htmlTag, tekst, parent) {
   const newElement = document.createElement(htmlTag);
   newElement.textContent = tekst;
   parent.appendChild(newElement);
@@ -9,7 +9,9 @@ function createNewNode = (htmlTag, tekst, parent) {
 
 function addElement(event) {
   if (event.key === 'Enter') {
-    createNewNode('h3', 'Dette er en H3', parent)
+    createNewNode('h3', input.value, parent);
+  } else if (event.key === 'Shift') {
+    createNewNode('p', input.value, parent)
   }
 }
 
